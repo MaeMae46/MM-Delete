@@ -43,7 +43,7 @@ const Stock3: React.FC = () => {
   }, [productId]);
 
   // ฟังก์ชันลบ stock
-  const handleDeleteClick = async (stockId) => {
+  const handleDeleteClick = async (stockId: number) => {
     if (isNaN(stockId)) {
       alert("Invalid stock ID");
       return;
@@ -51,21 +51,24 @@ const Stock3: React.FC = () => {
   
     const confirmDelete = window.confirm("คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้?");
     if (confirmDelete) {
+      // Optimistic UI: ลบ stock ทันทีจาก state
+      setStocks((prevStocks) => prevStocks.filter((stock) => stock.id !== stockId));
+  
       try {
         const response = await axios.delete(`http://localhost:8000/stock/${stockId}`);
-        if (response.status === 200) {
-          alert(response.data.message); 
-          // ... (update UI)
-        } else if (response.status === 404) {
-          alert("Stock not found."); 
-        } else {
-          alert("An error occurred during deletion."); 
+        if (response.status !== 200) {
+          throw new Error("ไม่สามารถลบ stock ได้");
         }
+        alert(response.data.message);
       } catch (error) {
-        console.error("Error deleting stock:", error);
-        alert("An error occurred during deletion."); 
+        console.error("เกิดข้อผิดพลาดระหว่างการลบ stock:", error);
+        alert("เกิดข้อผิดพลาดระหว่างการลบ");
+        // ถ้ามีข้อผิดพลาด ให้ย้อนกลับ UI
+        setStocks((prevStocks) => [...prevStocks, { id: stockId }]);
       }
-    }};
+    }
+  };
+  
    
   
 
@@ -117,7 +120,7 @@ const Stock3: React.FC = () => {
             </div>
           ))
         ) : (
-          <p>ไม่มี stock สำหรับสินค้านี้</p>
+          <div className="textno">ไม่มี stock สำหรับสินค้านี้</div>
         )}
 
         {/* การ์ดเพิ่ม stock */}

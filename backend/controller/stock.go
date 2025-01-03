@@ -2,7 +2,8 @@ package controller
 
 
 import (
-
+    "errors"
+    "gorm.io/gorm"
    "net/http"
 
 
@@ -133,24 +134,24 @@ func Update(c *gin.Context) {
 
 
 func Delete(c *gin.Context) {
-    id := c.Param("id")
-    db := config.DB()
+	id := c.Param("id")
+	db := config.DB()
   
-    result := db.Delete(&entity.Stock{}, id) 
+	result := db.Delete(&entity.Stock{}, id)
+
+	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			// ตรวจสอบเฉพาะกรณีที่ไม่พบ record
+			c.JSON(http.StatusNotFound, gin.H{"error": "Stock with ID not found"})
+		} else {
+			// จัดการกรณีข้อผิดพลาดอื่นๆ เช่น ข้อผิดพลาดฐานข้อมูล
+			c.JSON(http.StatusInternalServerError, gin.H{"error": result.Error.Error()})
+		}
+		return
+	}
   
-    if result.Error != nil {
-      if errors.Is(result.Error, gorm.ErrRecordNotFound) { 
-        // ตรวจสอบเฉพาะกรณีที่ไม่พบ record
-        c.JSON(http.StatusNotFound, gin.H{"error": "Stock with ID not found"}) 
-      } else {
-        // จัดการกรณีข้อผิดพลาดอื่นๆ เช่น ข้อผิดพลาดฐานข้อมูล
-        c.JSON(http.StatusInternalServerError, gin.H{"error": result.Error.Error()})
-      }
-      return
-    }
-  
-    c.JSON(http.StatusOK, gin.H{"message": "Deleted successful"})
-  }
+	c.JSON(http.StatusOK, gin.H{"message": "Deleted successful"})
+}
   
 
 func Create(c *gin.Context) {

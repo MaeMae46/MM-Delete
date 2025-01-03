@@ -135,4 +135,14 @@
     color: #3b3a3a;
     cursor: pointer;
   }
+  .textno{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* ระยะห่างระหว่างชื่อกับคำอธิบาย */
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    top: 150px;
+    right: 55px;
+}
   
