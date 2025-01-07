@@ -23,7 +23,7 @@ type Order struct {
 
    UserID  uint      `json:"user_id"`
 
-   User    *Users  `gorm:"foreignKey: id" json:"user_id"`
+   User    *Users  `gorm:"foreignKey: id" json:"user"`
 
    PaymentID  uint      `json:"payment_id"`
 
@@ -35,5 +35,6 @@ type Order struct {
 
    ShippingID  uint      `json:"shipping_id"`
 
+   OrderItems []OrderItem `gorm:"foreignKey:OrderID" json:"order_items"`
    //Shipping    *Shipping  `gorm:"foreignKey: id" json:"shipping_id"`
 }

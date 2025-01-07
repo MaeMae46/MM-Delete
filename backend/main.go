@@ -40,6 +40,10 @@ func main() {
    router := r.Group("/")
 
    {
+        router.PATCH("/orders/:orderID/status", controller.UpdateOrderStatus)
+        r.GET("/history/detail/:userId", controller.GetHistoryDetail)
+        r.GET("/orders/history/:userId", controller.GetOrderHistory)
+        r.POST("/orders", controller.CreateOrder)
 
         r.GET("/stocks", controller.GetStocksByProductID)
         r.POST("/stock", controller.Create)
