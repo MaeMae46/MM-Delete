@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="public/logo.png" />
+    <title>IGotSofa</title>
+    <style>
+      html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%; /* ให้ body เต็มหน้าจอ */
+          overflow: hidden; /* ปิดการเลื่อนของหน้าเว็บ */
+          background-color: #000000;
+          margin: 0 auto;
+      }   
+
+      #root {
+       display: flex;
+       justify-content: center;
+       align-content: flex-start;
+       flex-wrap: wrap;
+       
+        width: 100%;
+        
+        height: calc(100% ); /* ปรับขนาดให้พอดีกับหน้าจอหลัง topbar */
+        /* background: linear-gradient(to bottom, #AF1111, #B42D2D,#4C0505,#AD4F4F,#440303,#1E0303); */
+        /* background: linear-gradient(to bottom, rgb(92, 251, 0),rgb(40, 17, 193)); */
+       background-color: rgb(250, 250, 250);
+        overflow-y: auto; /* เปิดการเลื่อนเฉพาะใน root */
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="root"></div>
+   
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

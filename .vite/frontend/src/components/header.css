@@ -1,0 +1,134 @@
+
+.topbar {
+    position: fixed;
+    height: 60px;
+    justify-content: flex-end;
+    width: calc(100% - 10px);
+    z-index: 1000;
+     background: linear-gradient(to right,#4793AF,#4793AF,#4793AF); 
+   
+    box-shadow: 0 2px 5px #4793AF;
+    top:0px;
+    left: 0;
+  }
+  #HLogo{
+    margin-left: 30px;
+    width: 60px;
+  }#Logo{
+    margin-left: 15px;
+    width: 38px;
+    top: 12px;
+    position: absolute;
+  
+    
+  }
+  #profile {
+    width: 50px;
+    position: absolute;
+    right: 150px; /* ระยะห่างจากขอบขวาของ .topbar */
+    top: 10px; /* วางกลางแนวตั้งของ .topbar */
+    cursor: pointer;
+    color: #ffffff;
+    }
+    #cart {
+      width: 35px;
+    position: absolute;
+    right: 100px; /* ระยะห่างจากขอบขวาของ .topbar */
+    top: 32px; /* วางกลางแนวตั้งของ .topbar */
+    transform: translateY(-50%); /* ใช้เพื่อจัดตำแหน่งให้ชัดกลาง */
+    cursor: pointer;
+    }
+    
+    #ect{
+      width: 28px;
+    position: absolute;
+    right: 20px; /* ระยะห่างจากขอบขวาของ .topbar */
+    top: 17.5px; /* วางกลางแนวตั้งของ .topbar */
+    transform: translateY(-50%); /* ใช้เพื่อจัดตำแหน่งให้ชัดกลาง */
+    cursor: pointer;
+      
+    }#cointxt{margin:40px 20px 20px  10px;}
+
+    .wrapcoin{
+      position: absolute;
+      right: 150px; /* ระยะห่างจากขอบขวาของ .topbar */
+      top: 50%; /* วางกลางแนวตั้งของ .topbar */
+      transform: translateY(-50%); /* ใช้เพื่อจัดตำแหน่งให้ชัดกลาง */
+    }
+    .login{
+      position: absolute;
+      right: 100px; /* ระยะห่างจากขอบขวาของ .topbar */
+      top: 50%; /* วางกลางแนวตั้งของ .topbar */
+      transform: translateY(-50%); /* ใช้เพื่อจัดตำแหน่งให้ชัดกลาง */
+    }
+#dropdown-profile {
+      position: absolute;
+      right: -43px; /* ปรับค่าให้เหมาะสม */
+      top: 50%; /* ปรับค่าตามที่ต้องการ */
+      transform: translateY(-50%);
+  }
+.dropdown-menu {
+      width: 190px;
+      z-index: 2000;
+      position: absolute; /* ถ้าไม่ได้กำหนดไว้ */
+      
+     
+}
+.search {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#login{
+  border: 2px solid rgb(124, 122, 122);
+  
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #df052f;
+    color: white;
+    border-radius: 21px;
+}
+#login:hover{
+   background-color: #8d021e;
+}
+#locks{
+  cursor: block;
+}
+#white{
+  color: #ffffff;
+  font-size: 45px;
+}
+
+.custom-dropdown-menu {
+  border-radius: 8px;
+  background-color: #4793AF;
+  padding: 10px; /* เพิ่ม padding รอบ dropdown */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  margin-top: 55px; /* เพิ่มระยะห่างด้านบน */
+  margin-right: 20px;
+}
+
+.custom-dropdown-menu .dropdown-item {
+  display: block; /* ทำให้แต่ละ item เป็นบรรทัดใหม่ */
+  padding: 10px 20px; /* ระยะห่างด้านในของแต่ละ item */
+  margin-bottom: 5px; /* เพิ่มช่องว่างระหว่าง item */
+  color: #ffffff;
+  text-align: left; /* จัดข้อความชิดซ้าย */
+  text-decoration: none; /* เอาเส้นขีดใต้ลิงก์ออก */
+  border-radius: 5px; /* เพิ่มมุมโค้งเล็กน้อยให้แต่ละ item */
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+  background-color: #f0f0f0; /* เปลี่ยนสีเมื่อ hover */
+  color: #000; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+}
+
+.custom-dropdown-menu .dropdown-item:last-child {
+  margin-bottom: 0; /* เอาช่องว่างของ item สุดท้ายออก */
+}
+
+
+
+
