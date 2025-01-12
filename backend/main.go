@@ -40,6 +40,12 @@ func main() {
    router := r.Group("/")
 
    {
+        router.GET("/:userId", controller.GetPointsByUserID)
+	    router.POST("/redeem", controller.RedeemPoints)
+	    router.POST("/earn", controller.EarnPoints)
+	    router.PUT("/:pointId", controller.UpdatePoints)
+	    router.DELETE("/:pointId", controller.DeletePoints)
+
         router.PATCH("/orders/:orderID/status", controller.UpdateOrderStatus)
         r.GET("/history/detail/:userId", controller.GetHistoryDetail)
         r.GET("/orders/history/:userId", controller.GetOrderHistory)
@@ -81,7 +87,7 @@ func CORSMiddleware() gin.HandlerFunc {
         c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:5173") // ตั้งค่าให้อนุญาตการเชื่อมต่อจาก frontend
         c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
         c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-        c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE, CREATE")
+        c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE, CREATE, PATCH")
 
         if c.Request.Method == "OPTIONS" {
             c.AbortWithStatus(204)

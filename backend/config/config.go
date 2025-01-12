@@ -54,6 +54,9 @@ func SetupDatabase() {
         &entity.Product{},
         &entity.Stock{},
         &entity.Users{},
+        &entity.Point{},
+        &entity.PointPolicy{},
+        &entity.PointTran{},
     )
 
     hashedPassword, _ := HashPassword("123456")
@@ -74,6 +77,23 @@ func SetupDatabase() {
     db.FirstOrCreate(User, &entity.Users{
         Email: "May@gmail.com",
     })
+
+    Point := &entity.Point{
+        ID:          1,
+        TotalPoint: 100,
+    }
+
+    db.FirstOrCreate(&Point, entity.Point{ID: Point.ID})
+
+    PointPolicy := &entity.PointPolicy{
+        ID:          1,
+        EarnRate:    4,  // 4 แต้ม ต่อการใช้จ่าย 1 บาท
+        RedeemRate:  100, // ใช้ 100 แต้ม เพื่อลดราคา 1 บาท
+        Description: "สะสม 4 แต้ม ต่อการใช้จ่าย 1 บาท และใช้ 100 แต้ม เพื่อลดราคา 1 บาท",
+    }
+
+    db.FirstOrCreate(&PointPolicy, entity.PointPolicy{ID: PointPolicy.ID})
+    
 
     // ตัวอย่างข้อมูล Stock
     stocks := []entity.Stock{

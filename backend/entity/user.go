@@ -31,5 +31,5 @@ type Users struct {
 
    PointID  uint      `json:"point_id"`
 
-   //Point    *Point  `gorm:"foreignKey: id" json:"point_id"`
+   Point    *Point  `gorm:"foreignKey: id" json:"point_id"`
 }
