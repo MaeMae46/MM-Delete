@@ -3,6 +3,8 @@ import Header from "../components/header";
 import back from "../../public/assets/back.png";
 import "../components/card4.css";
 import { useNavigate, useLocation } from "react-router-dom";
+import { message } from "antd";
+import "../components/t.css";
 
 const Stock4: React.FC = () => {
   const [quantity_in_stock, setQuantity] = useState(1);
@@ -15,12 +17,10 @@ const Stock4: React.FC = () => {
   const location = useLocation();
   const { productId, product, stock } = location.state || {}; // รับ product, productId, และ stock
 
-  // ตรวจสอบข้อมูลเบื้องต้น
   if (!productId || !product) {
     return <div>ไม่พบข้อมูลสินค้า</div>;
   }
 
-  // ตั้งค่าฟิลด์เริ่มต้นเมื่อมี stock
   useEffect(() => {
     if (stock) {
       setColor(stock.color);
@@ -55,7 +55,7 @@ const Stock4: React.FC = () => {
 
   const handleSave = async () => {
     if (!color || !shape_size || !price || !quantity_in_stock || !image) {
-      alert("กรุณากรอกข้อมูลให้ครบถ้วน!");
+      message.error("กรุณากรอกข้อมูลให้ครบถ้วน!");
       return;
     }
 
@@ -83,14 +83,14 @@ const Stock4: React.FC = () => {
       });
 
       if (response.ok) {
-        alert(stock?.id ? "อัปเดตข้อมูลเรียบร้อย!" : "เพิ่มข้อมูลเรียบร้อย!");
-        navigate("/Stock3", { state: { productId } }); // กลับไปหน้า Stock3
+        message.success(stock?.id ? "อัปเดตข้อมูลเรียบร้อย!" : "เพิ่มข้อมูลเรียบร้อย!");
+        navigate("/Stock3", { state: { productId } });
       } else {
-        alert("เกิดข้อผิดพลาดในการบันทึกข้อมูล!");
+        message.error("เกิดข้อผิดพลาดในการบันทึกข้อมูล!");
       }
     } catch (error) {
       console.error("Error saving stock:", error);
-      alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้!");
+      message.error("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้!");
     }
   };
 
@@ -108,7 +108,7 @@ const Stock4: React.FC = () => {
         <img style={{ width: "50px", height: "auto" }} src={back} alt="back" />
       </a>
 
-      <h1 style={{ marginTop: "80px", marginLeft: "250px" }}>เพิ่ม/แก้ไขรายการสินค้า</h1>
+      <h1>เพิ่ม/แก้ไขรายการสินค้า</h1>
 
       <div className="product-card5">
         <img className="product-card-img5" src={product.image} alt={product.name} />

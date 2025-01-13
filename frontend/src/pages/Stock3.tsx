@@ -4,6 +4,8 @@ import axios from "axios";
 import Header from "../components/header";
 import back from "../../public/assets/back.png";
 import "../components/card3.css";
+import { message } from "antd";
+import "../components/t.css";
 
 const Stock3: React.FC = () => {
   const location = useLocation();
@@ -45,7 +47,7 @@ const Stock3: React.FC = () => {
   // ฟังก์ชันลบ stock
   const handleDeleteClick = async (stockId: number) => {
     if (isNaN(stockId)) {
-      alert("Invalid stock ID");
+      message.error("Invalid stock ID");
       return;
     }
   
@@ -62,7 +64,7 @@ const Stock3: React.FC = () => {
         alert(response.data.message);
       } catch (error) {
         console.error("เกิดข้อผิดพลาดระหว่างการลบ stock:", error);
-        alert("เกิดข้อผิดพลาดระหว่างการลบ");
+        message.error("เกิดข้อผิดพลาดระหว่างการลบ");
         // ถ้ามีข้อผิดพลาด ให้ย้อนกลับ UI
         setStocks((prevStocks) => [...prevStocks, { id: stockId }]);
       }
@@ -93,7 +95,7 @@ const Stock3: React.FC = () => {
   return (
     <div>
       <Header />
-      <a href="/Stock2" style={{ position: "absolute", top: "100px", right: "1400px" }}>
+      <a href="/Stock2" style={{ position: "absolute", top: "100px", right: "1450px" }}>
         <img style={{ width: "50px", height: "auto" }} src={back} alt="Back" />
       </a>
 
@@ -108,31 +110,32 @@ const Stock3: React.FC = () => {
 
       {/* ข้อมูล stock */}
       <div className="card-container4">
-        {stocks.length > 0 ? (
-          stocks.map((stock) => (
-            <div className="card4" key={stock.id}>
-              <img src={stock.image || "/assets/placeholder.png"} alt={stock.color} className="card-image4" />
-              <h3 className="card-title4">{stock.color}</h3>
-              <div className="card-actions4">
-                <button className="edit-btn" onClick={() => handleEditClick(stock)}>แก้ไข</button>
-                <button className="delete-btn" onClick={() => handleDeleteClick(stock.id)}>ลบ</button>
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="textno">ไม่มี stock สำหรับสินค้านี้</div>
-        )}
-
-        {/* การ์ดเพิ่ม stock */}
-          <div className="card4" onClick={handleNext4Click}>
-            <div className="card add-card4">
-              <div className="add-image4">
-                <span>+</span>
-              </div>
-            </div>
-            <h3 className="card-title4"></h3>
-          </div>
+  {stocks.length > 0 ? (
+    stocks.map((stock) => (
+      <div className="card4" key={stock.id}>
+        <img src={stock.image || "/assets/placeholder.png"} alt={stock.color} className="card-image4" />
+        <h3 className="card-title4">{stock.color}</h3>
+        <div className="card-actions4">
+          <button className="edit-btn" onClick={() => handleEditClick(stock)}>แก้ไข</button>
+          <button className="delete-btn" onClick={() => handleDeleteClick(stock.id)}>ลบ</button>
+        </div>
       </div>
+    ))
+  ) : (
+    <div className="textno">ไม่มี stock สำหรับสินค้านี้</div>
+  )}
+
+  {/* การ์ดเพิ่ม stock */}
+  <div className="card4" onClick={handleNext4Click}>
+    <div className="add-card4">
+      <div className="add-image4">
+        <span>+</span>
+      </div>
+    </div>
+    <h3 className="card-title4"></h3>
+  </div>
+</div>
+
     </div>
   );
 };

@@ -139,6 +139,14 @@ func SetupDatabase() {
             UserID:      1,
             CatagoryID:  2,
         },
+        {
+            ID:          3,
+            Name:        "เก้าอี้หวาย",
+            Description: "สานด้วยเชือกปอ คุณภาพดี โครงสร้างไม้สัก(Teak Wood) มีน้ำหนักเบา แข็งแรง",
+            Image:       "/assets/chair.jpg",
+            UserID:      1,
+            CatagoryID:  1,
+        },
     }
 
     for _, product := range products {

@@ -17,13 +17,13 @@ const ProductGrid = styled.div`
 `;
 
 const Stock1: React.FC = () => {
-  const [products, setProducts] = useState<any[]>([]);  // กำหนดประเภทข้อมูลของ products ให้เป็น array
+  const [stock, setStock] = useState<any[]>([]);  // กำหนดประเภทข้อมูลของ products ให้เป็น array
 
   useEffect(() => {
     // เรียก API เพื่อดึงข้อมูลสินค้า
     axios.get("http://localhost:8000/stock")  // ใช้ endpoint ที่ถูกต้อง
       .then((response) => {
-        setProducts(response.data);  // ตั้งค่าผลลัพธ์ที่ได้รับจาก API ไปยัง state
+        setStock(response.data);  // ตั้งค่าผลลัพธ์ที่ได้รับจาก API ไปยัง state
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
@@ -41,12 +41,12 @@ const Stock1: React.FC = () => {
 
       {/* ใช้การ map ข้อมูลจาก products เพื่อแสดงสินค้า */}
       <ProductGrid>
-        {products.map((product, index) => (
+        {stock.map((stock, index) => (
           <Card 
             key={index}
-            title={product.title}  // สมมติว่าใน API มีชื่อสินค้า
-            price={product.price}  // สมมติว่าใน API มีราคาสินค้า
-            image={product.image || p1}  // ใช้ภาพจาก API หรือใช้ภาพ placeholder หากไม่มี
+            name={stock.name}  // สมมติว่าใน API มีชื่อสินค้า
+            price={stock.price}  // สมมติว่าใน API มีราคาสินค้า
+            image={stock.image || p1}  // ใช้ภาพจาก API หรือใช้ภาพ placeholder หากไม่มี
           />
         ))}
       </ProductGrid>

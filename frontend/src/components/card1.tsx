@@ -3,17 +3,17 @@ import './card1.css';
 import cart from '../../public/assets/shopcart.png';
 
 interface ProductCardProps {
-    title: string;
+    name: string;
     price: number;
     image: string;
   }
 
-  const Card: React.FC<ProductCardProps> = ({ title, price, image }) => {
+  const Card: React.FC<ProductCardProps> = ({ name, price, image }) => {
   return (
     <div className="product-card1">
-      <img src={image} alt={title} className="product-image1" />
+      <img src={image} alt={name} className="product-image1" />
       <div className="product-content1">
-        <h3 className="product-title1">{title}</h3>
+        <h3 className="product-title1">{name}</h3>
         <p className="product-price1">฿{price}</p>
         <p className="product-brand1">MaeMae</p>
       </div>

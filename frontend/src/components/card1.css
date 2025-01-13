@@ -39,9 +39,9 @@
   
   .product-cart-icon1 {
     position: absolute;
-    top: 20px;
+    top: 0px;
     right: -220px;
-    transform: scale(0.05); /* ลดขนาดลง 80% */
+    transform: scale(0.04); /* ลดขนาดลง 80% */
     transform-origin: center;
     color: hsl(0, 0%, 0%);
     cursor: pointer;

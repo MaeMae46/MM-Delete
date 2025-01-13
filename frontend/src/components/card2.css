@@ -3,7 +3,6 @@
     grid-template-columns: repeat(2, 1fr); /* สร้าง 2 คอลัมน์ */
     gap: 20px; /* ระยะห่างระหว่างการ์ด */
     margin-top: 20px; /* ระยะห่างจากด้านบน */
-    
   }
   
   .product-card2 {
@@ -15,50 +14,49 @@
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.product-card-img2 {
+  }
+  
+  .product-card-img2 {
     width: 30%; /* กำหนดขนาดความกว้างรูปภาพ */
     height: auto;
     border-radius: 5px;
-}
-
-.product-card .content2 {
-    flex: 1; /* ให้เนื้อหาข้อความขยายพื้นที่เท่าที่เหลืออยู่ */
-    color: #333;
-}
-
-.product-card h2 {
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-.product-card p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-.product-content2 {
+  }
+  
+  .product-content2 {
     display: flex;
     flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
     justify-content: flex-start; /* เน้นเนื้อหาที่จุดเริ่มต้น */
-}
-
-.product-title2 {
+  }
+  
+  .product-title2 {
     font-size: 1.5rem; /* ขนาดตัวอักษรชื่อสินค้า */
     font-weight: bold;
     margin-bottom: 10px; /* ระยะห่างระหว่างชื่อกับคำอธิบาย */
     color: #000000;
-    text-decoration: none;
-}
-
-.product-description2 {
+  }
+  
+  .product-description2 {
     font-size: 1rem; /* ขนาดตัวอักษรรายละเอียด */
     color: #555;
     line-height: 1.6;
-    text-decoration: none;
-}
+  }
+  
+  .title {
+    font-weight: bold;
+    margin-left: 0;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 100px;  /* เลื่อนข้อความลงจากด้านบน */
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 100px;
+    right: 1400px;
+  }
+  
+  .back-img {
+    width: 50px;
+    height: auto;
+  }
   
