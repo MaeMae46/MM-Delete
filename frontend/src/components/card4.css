@@ -2,7 +2,7 @@
     display: flex; /* จัดวางเนื้อหาแบบ Flexbox */
     align-items: center; /* จัดให้อยู่กึ่งกลางแนวแกน Y */
     gap: 20px; /* ระยะห่างระหว่างรูปภาพกับข้อความ */
-    background-color: #FFBF65; /* สีพื้นหลังของการ์ด */
+    background-color: #001529; /* สีพื้นหลังของการ์ด */
     width: 700px; /* ความกว้าง */
     padding: 15px;
     border-radius: 10px;
@@ -30,7 +30,7 @@
 h1 {
   font-size: 30px;  /* ขนาดตัวอักษร */
   font-weight: bold;  /* ทำตัวหนา */
-  color: #333;  /* สีตัวอักษร */
+  color: #000000;  /* สีตัวอักษร */
   margin-top: 80px;
   margin-left: 0px;
 }
@@ -52,13 +52,13 @@ h1 {
     font-size: 1.5rem; /* ขนาดตัวอักษรชื่อสินค้า */
     font-weight: bold;
     margin-bottom: 10px; /* ระยะห่างระหว่างชื่อกับคำอธิบาย */
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .product-description5 {
     font-size: 1rem; /* ขนาดตัวอักษรรายละเอียด */
-    color: #555;
+    color: #c7c6c6;
     line-height: 1.6;
     text-decoration: none;
 }
@@ -67,7 +67,7 @@ h1 {
 /* คอนเทนเนอร์หลัก */
 .form-container {
     display: flex;
-    background-color: #ffc87a; /* สีพื้นหลัง */
+    background-color: #001529; /* สีพื้นหลัง */
     border-radius: 15px;
     padding: 20px;
     justify-content: space-between;
@@ -89,6 +89,7 @@ h1 {
   
   label {
     font-weight: bold;
+    color: #ffffff;
     margin: 5px 0;
   }
   
@@ -143,11 +144,11 @@ h1 {
   }
   
   .cancel-btn {
-    background-color: #e76f51;
+    background-color: #f44336;
   }
   
   .save-btn {
-    background-color: #4da8da;
+    background-color: #001529;
   }
 
 

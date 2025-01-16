@@ -5,9 +5,9 @@
     justify-content: flex-end;
     width: calc(100% - 10px);
     z-index: 1000;
-     background: linear-gradient(to right,#4793AF,#4793AF,#4793AF); 
+     background: linear-gradient(to right,#001529,#001529,#001529); 
    
-    box-shadow: 0 2px 5px #4793AF;
+    box-shadow: 0 2px 5px #001529;
     top:0px;
     left: 0;
   }
@@ -103,7 +103,7 @@
 
 .custom-dropdown-menu {
   border-radius: 8px;
-  background-color: #4793AF;
+  background-color: #001529 ;
   padding: 10px; /* เพิ่ม padding รอบ dropdown */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
   margin-top: 55px; /* เพิ่มระยะห่างด้านบน */

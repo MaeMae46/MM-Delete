@@ -9,7 +9,7 @@
     display: flex; /* จัดวางเนื้อหาแบบ Flexbox */
     align-items: center; /* จัดให้อยู่กึ่งกลางแนวแกน Y */
     gap: 20px; /* ระยะห่างระหว่างรูปภาพกับข้อความ */
-    background-color: #FFBF65; /* สีพื้นหลังของการ์ด */
+    background-color: #001529; /* สีพื้นหลังของการ์ด */
     width: 500px; /* ความกว้าง */
     padding: 15px;
     border-radius: 10px;
@@ -32,18 +32,19 @@
     font-size: 1.5rem; /* ขนาดตัวอักษรชื่อสินค้า */
     font-weight: bold;
     margin-bottom: 10px; /* ระยะห่างระหว่างชื่อกับคำอธิบาย */
-    color: #000000;
+    color: #ffffff;
   }
   
   .product-description2 {
     font-size: 1rem; /* ขนาดตัวอักษรรายละเอียด */
-    color: #555;
+    color: #c0c0c0;
     line-height: 1.6;
   }
   
   .title {
     font-weight: bold;
     margin-left: 0;
+    color: #000000;
     font-size: 2rem;
     text-align: center;
     margin-top: 100px;  /* เลื่อนข้อความลงจากด้านบน */

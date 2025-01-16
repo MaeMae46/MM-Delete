@@ -100,7 +100,9 @@ const Stock4: React.FC = () => {
 
   return (
     <div>
+      
       <Header />
+      
       <a
         onClick={handleCancel}
         style={{ position: "absolute", top: "100px", right: "1400px", cursor: "pointer" }}

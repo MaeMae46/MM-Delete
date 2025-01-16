@@ -2,7 +2,7 @@
     display: flex; /* จัดวางเนื้อหาแบบ Flexbox */
     align-items: center; /* จัดให้อยู่กึ่งกลางแนวแกน Y */
     gap: 20px; /* ระยะห่างระหว่างรูปภาพกับข้อความ */
-    background-color: #FFBF65; /* สีพื้นหลังของการ์ด */
+    background-color: #001529; /* สีพื้นหลังของการ์ด */
     width: 100%; /* เปลี่ยนจากขนาดคงที่เป็น 100% */
     max-width: 700px; /* กำหนดความกว้างสูงสุด */
     padding: 15px;
@@ -48,13 +48,13 @@
     font-size: 1.5rem; /* ขนาดตัวอักษรชื่อสินค้า */
     font-weight: bold;
     margin-bottom: 10px; /* ระยะห่างระหว่างชื่อกับคำอธิบาย */
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .product-description3 {
     font-size: 1rem; /* ขนาดตัวอักษรรายละเอียด */
-    color: #555;
+    color: #cecccc;
     line-height: 1.6;
     text-decoration: none;
 }
@@ -69,7 +69,7 @@
 }
 
 .card4 {
-    background-color: #FFBF65; /* สีพื้นหลัง */
+    background-color: #001529; /* สีพื้นหลัง */
     border-radius: 15px;
     padding: 10px;
     text-align: center;
@@ -90,6 +90,7 @@
 /* ชื่อสีด้านล่าง */
 .card-title4 {
     font-size: 18px;
+    color: #ffffff;
     font-weight: bold;
     margin: 10px 0;
 }
@@ -105,13 +106,13 @@
 }
 
 .edit-btn {
-    background-color: #4da8da;
-    color: white;
+    background-color: #f4f4f4 ;
+    color: rgb(0, 0, 0);
 }
 
 .delete-btn {
-    background-color: #e76f51;
-    color: white;
+    background-color: #f44336;
+    color: rgb(255, 255, 255);
 }
 
 /* การ์ดเพิ่มภาพ */
@@ -125,13 +126,13 @@
 .add-image4 {
     width: 100%;
     height: 100%;
-    border: 2px dashed #3b3a3a;
+    border: 2px dashed #ffffff;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 48px;
-    color: #3b3a3a;
+    color: #ffffff;
     cursor: pointer;
 }
 
